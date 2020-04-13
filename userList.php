@@ -1,21 +1,24 @@
 <?php include 'includes/DBConnection.php'; ?>
 
 <?php 
-if(isset($_GET['del'])){
-    echo 'Delete block visited';
-    $id = $_GET['id'];
-    $sql="DELETE FROM user where id ='$id'";
-    echo $sql;
-    $delete = mysqli_query($con, $sql);
-    if($delete){
-        echo 'Delete Successfully';
-    }
- else {
-        echo 'Something went wrong';    
-    }
-}
-
-?>
+//
+//$id = $_GET['delid'];
+//$msg='';
+//if($id!=NULL){
+//
+//   
+//    $sql="DELETE FROM user where id ='$id'";
+//   
+//    $delete = mysqli_query($con, $sql);
+//    if($delete){
+//        $msg= 'Delete Successfully';
+//    }
+// else {
+//        $msg= 'Something went wrong';    
+//    }
+//}
+//
+//?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -32,8 +35,8 @@ if(isset($_GET['del'])){
 <div class="container">
     
     <br><br>
-    
-    <a class="btn btn-primary btn-md pull-right" href="addUserView.php"><h4>Add new user</h4> </a>
+    <h3><?php $msg ?></h3>
+    <a class="btn btn-primary btn-md pull-right" href="add-user.php"><h4>Add new user</h4> </a>
     
   <h2>See All User List..</h2>
   
@@ -64,8 +67,8 @@ while ($row = mysqli_fetch_array($result)){
         <td><?php echo $row['name'] ?></td>
         <td><?php echo $row['email'] ?></td>
         <td><?php echo $row['address'] ?></td>
-        <td><a href="update.php?id=<?php echo $row['id']; ?> & action=del">Edit</a></td>
-        <td><a href="userList.php?id=<?php echo $row['id']; ?>&&action=del">Delete</a></td>
+        <td><a href="addUser.php?id=<?php echo $row['id']; ?> && action=edit">Edit</a></td>
+        <td><a href="userList.php?delid=<?php echo $row['id']; ?>&&action=del">Delete</a></td>
       </tr>
       
       <?php

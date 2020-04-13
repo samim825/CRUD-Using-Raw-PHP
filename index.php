@@ -16,7 +16,7 @@
 </head>
     <body>
         <div class='container'>
-        <a href="addUser.php" class="btn btn-primary" >Add New User</a>
+            <a href="add-user.php" class="btn btn-primary" >Add New User</a>
         <a href="userList.php" class="btn btn-success">See All Users list </a>
         </div>
     </body>
